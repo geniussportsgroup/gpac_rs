@@ -1,0 +1,46 @@
+[package]
+name = "gpac"
+version = "0.1.0"
+edition = "2021"
+repository = "https://gitlab.betgenius.net/webdev/video-platform/video-distribution"
+license = "Proprietary"
+description = "GPAC wrappers for Rust"
+
+
+[features]
+
+#################################################
+[build-dependencies]
+cc = {version="1.0"}
+bindgen = {version= "0.68.1" }
+
+#################################################
+[dependencies]
+libc = {version = "0.2"}
+strum = "0.25"
+strum_macros = "0.25"
+
+#######################################
+# Dependencies for building examples
+clap = { version = "4.4.4", features = ["derive"] }
+
+
+#################################################
+# Test dependencies
+rstest = { version= "0.18.2" }
+mockall = { version="0.11.4"}
+
+[[example]]
+name = "create_session"
+
+[[example]]
+name = "file_copy"
+
+[[example]]
+name = "custom_filter"
+
+[[example]]
+name = "ts2dash"
+
+[[example]]
+name = "ts2dash_http_push"
